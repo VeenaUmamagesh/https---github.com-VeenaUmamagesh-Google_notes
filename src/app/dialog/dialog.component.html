@@ -1,0 +1,28 @@
+<mat-dialog-content style="background-color:{{data.currcolor}}">
+    <mat-form-field appearance="fill">
+        <input [(ngModel)]="data.title" value="{{data.title}}" style="background-color:{{data.currcolor}}" >
+        <input [(ngModel)]="data.note" value="{{data.note}}" style="background-color:{{data.currcolor}}">
+        
+        </mat-form-field>
+        <mat-form-field *ngIf="data.upimg.length>0">
+            <div *ngFor="let img of data.upimg">
+                <img [src]="img" width="100px" height="100px">
+            </div>
+        </mat-form-field>
+</mat-dialog-content>
+<mat-action-list>
+    <button mat-icon-button [matMenuTriggerFor]="col">
+        <mat-icon>color_lens</mat-icon>
+      </button>
+      <mat-menu #col="matMenu">
+        <div mat-menu-item >
+          <button><img src="../../assets/white.png"></button>
+          <button><img src="../../assets/blue.png"></button>
+          <button><img src="../../assets/yellow.png"></button>
+          <button><img src="../../assets/green.png"></button>
+        </div>
+    </mat-menu>
+    <button mat-dialog-close mat-dialog-close="{{[data.id,data.title,data.note,data.currcolor]}}" >Save</button>
+</mat-action-list>
+
+

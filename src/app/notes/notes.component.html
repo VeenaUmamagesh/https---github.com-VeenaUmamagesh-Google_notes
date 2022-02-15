@@ -1,0 +1,58 @@
+    <mat-accordion class="example-headers-align" >
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(0)" style="margin-top:20px;margin-left:300px;width:60%;height:40%;" id="bg" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+               Take a Note
+            </mat-panel-title>
+           
+          </mat-expansion-panel-header>
+          <mat-form-field appearance="fill" style="width:100%;">
+            <mat-label>Title</mat-label>
+            <input matInput   id="title"   [(ngModel)]="title">
+          </mat-form-field>
+          <mat-form-field appearance="fill" style="width:100%;">
+            <mat-label>Note...</mat-label>
+            <input matInput   id="note"   [(ngModel)]="note">
+          </mat-form-field>
+          <div *ngIf="upimg.length>0">
+            <div *ngFor="let img of upimg">
+                <img [src]="img" width="200px" height="200px">
+            </div>
+          </div>
+          <mat-action-row>
+            <button mat-icon-button [matMenuTriggerFor]="color">
+              <mat-icon>color_lens</mat-icon>
+            </button>
+            <mat-menu #color="matMenu">
+              <div mat-menu-item >
+                <button  (click)="changecolor('#ffffff')"><img src="../../assets/white.png"></button>
+                <button  (click)="changecolor('#1E90FF')"><img src="../../assets/blue.png"></button>
+                <button  (click)="changecolor('#FFD800')"><img src="../../assets/yellow.png"></button>
+                <button (click)="changecolor('#C7EA46')"><img src="../../assets/green.png"></button>
+              </div>
+            </mat-menu>
+            <button mat-icon-button>
+              <mat-icon>brush</mat-icon>
+            </button>
+            <input type="file" id="img_upload" accept="image/*" #file style="display:none;" (change)="uploadimage($event)">
+            <button mat-icon-button (click)="file.click()">
+              <mat-icon>add_photo_alternate</mat-icon>
+            </button>
+            <button mat-button color="primary" (click)="add( id,title,note,currcolor,upimg)">Save</button>
+          </mat-action-row>
+    </mat-expansion-panel>
+    </mat-accordion>
+    
+    <div *ngFor="let s of allnotes;let id=index;" class="flex-container"  >
+      <mat-card (click)="openDialog(id,s.title,s.note,currcolor,s.upimg)" id="{{id}}" style="background-color: {{allnotes[id].colors}};">
+       
+        <mat-card-title >{{s.title}}</mat-card-title>
+        <mat-card-content ><p>{{s.note}}</p></mat-card-content>
+        <mat-card-content *ngIf="s.upimg.length>0">
+          <div *ngFor="let img of s.upimg">
+            <img [src]="img" width="100px" height="100px">
+          </div>
+        </mat-card-content>
+     </mat-card>
+    
+          </div>

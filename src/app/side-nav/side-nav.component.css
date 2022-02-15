@@ -1,0 +1,46 @@
+.sidelist li{
+    list-style-type: none;
+    
+    line-height:30px;
+    height:40%;
+    overflow:hidden;
+    display:flex;
+}
+.sidelist li:hover{
+    background-color: antiquewhite;
+    border-radius: 20px;
+}
+.sidelist li{
+    
+    font-size: 15px;
+    font-weight: 600;
+    cursor:pointer;
+}
+.sidelist img{
+    padding:11px;
+    
+    
+}
+.onActive{
+    color:rgb(107, 105, 103);
+    background-color: antiquewhite;
+    border-radius: 20px;
+}
+.onActive:hover{
+    color:rgb(107, 105, 103) !important;
+    background-color: antiquewhite !important;
+}
+.menubox{
+    height:100%;
+    width: 85px;
+    border-radius:20px;
+    margin-left: -30px;
+}
+.menubox:hover{
+    width:200px;
+    transition:0.3s;
+}
+.side-nav{
+  float:left;
+}
+  

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gkeep</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="cont">
+        <div class="navelements">
+            <a>
+       <img src="../../assets/1.png" class="image"><img></a></div>
+       <div class="navelements">
+           <img src="../../assets/gkeep1.png" class="icon" ><img>
+       </div>
+       <div class="navelements">
+           <p style="color: rgb(70, 69, 69);margin:4px;margin-top:12px;font-family:Arial, Helvetica, sans-serif;font-stretch:condensed;font-size:x-large">Keep</p>
+       </div>
+       <div class="settings" style="display: flex;">
+       <div class="search-bar">
+        <form>
+            <button type="submit" class="btn" ><i class="fa fa-search"></i></button>
+            <input type="text" class="text" placeholder="Search.." name="search" style="width: 600px;">
+           </form>
+        </div>
+        <div >
+        <button mat-button [matMenuTriggerFor]="menu" id="settings-menu" style="margin-left:200px;margin-top:15px;background-color:white;border:none;"><mat-icon>settings</mat-icon></button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Settings</button>
+            <button mat-menu-item>Enable dark theme</button>
+            <button mat-menu-item>Send feedback</button>
+            <button mat-menu-item>Help</button>
+            <button mat-menu-item>App downloads</button>
+            <button mat-menu-item>Keyboard shortcuts</button>
+        </mat-menu></div>
+    </div>
+    </div>
+
+</body>
+</html>

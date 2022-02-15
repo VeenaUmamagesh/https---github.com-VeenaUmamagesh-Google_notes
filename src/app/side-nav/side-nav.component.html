@@ -1,0 +1,44 @@
+<section class="app-side-nav">
+
+  <div class="row" style="float: left;display:block;">
+    <div class="col-lg-2">
+    <div class="menubox">
+    <ul class="sidelist">
+        <li><img src="../../assets/bulb.png" (click)="goTo('Notes')" [ngClass]="{'onActive':selectedMenu=='Notes'}">Notes</li>
+        <li><img src="../../assets/bell.png" (click)="goTo('Reminder')" [ngClass]="{'onActive':selectedMenu=='Reminder'}">Reminder</li>
+        <li><img src="../../assets/edit.png" (click)="goTo('Edit')" [ngClass]="{'onActive':selectedMenu=='Edit'}">Edit</li>
+        <li><img src="../../assets/archive.png" (click)="goTo('Archive')" [ngClass]="{'onActive':selectedMenu=='Archive'}">Archive</li>
+        <li><img src="../../assets/bin.png" (click)="goTo('Trash')" [ngClass]="{'onActive':selectedMenu=='Trash'}">Trash</li>
+        </ul>
+      </div>
+      </div>
+      </div>
+      <div class="row" style="float: left;display:block;">
+    <div class="col-lg-6">
+      <div class="side-content">
+        <div class="tabs" *ngIf="selectedMenu=='Notes'" style="float: left;
+        display: block;
+        position: absolute;
+        margin-left: 100px">
+          <app-notes></app-notes>
+        </div>
+        <div class="side-content">
+          <div class="tabs" *ngIf="selectedMenu=='Reminder'">
+            <app-reminder></app-reminder>
+          </div>
+          <div class="side-content">
+            <div class="tabs" *ngIf="selectedMenu=='Edit'">
+              <app-edit></app-edit>
+            </div>
+            <div class="side-content">
+              <div class="tabs" *ngIf="selectedMenu=='Archive'">
+                <app-archive></app-archive>
+              </div>
+              <div class="side-content">
+                <div class="tabs" *ngIf="selectedMenu=='Trash'">
+                  <app-trash></app-trash>
+                </div>
+      </div></div>
+
+    </div>
+
